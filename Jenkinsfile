@@ -4,13 +4,17 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/harshithaaa2727/talend-job'
+                // Checkout code from your GitHub repo
+                git url: 'https://github.com/harshithaaa2727/talend-job.git', branch: 'main'
             }
         }
 
         stage('Run Talend Job') {
             steps {
-                bat 'job\\job_run.bat'
+                script {
+                    // Run your Talend job batch file
+                    bat 'job/job_run.bat'
+                }
             }
         }
     }
