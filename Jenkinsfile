@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/harshithaaa2727/talend-job'
+                git branch: 'main', url: 'https://github.com/harshithaaa2727/talend-job'
             }
         }
 
